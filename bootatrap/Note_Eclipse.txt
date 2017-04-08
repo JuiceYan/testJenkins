@@ -1,0 +1,6 @@
+1.bookmark(help find file or line of file)
+2.ctrl + F6(change file which opened in screen)
+3.team - local history(this could help remember local save operitions)
+4.ctrl + K(find next one)
+5.ctrl + 1(auto amend)
+6.crtl + shift + P (return to the match "{" or "}")
