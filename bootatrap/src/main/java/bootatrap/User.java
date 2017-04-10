@@ -4,11 +4,13 @@ public class User {
 	/**
 	 * this name fields
 	 */
-	private  String name = "qqq";
+	private  String name;
 
-	// this age
+	/**
+	 *  this age
+	 */
 	private  int age;
-
+	private String password;
 	/**
 	 * @return the name
 	 */
@@ -37,4 +39,18 @@ public class User {
 		this.age = age;
 	}
 
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * @param password the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 }
