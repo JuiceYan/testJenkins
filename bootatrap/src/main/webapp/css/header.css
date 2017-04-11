@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+#navbar .nav li{
+	margin-left: 120px;
+}
+
+#navbar .dropdown .dropdown-menu li{
+	margin: 0px;
+}
