@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
- 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <script src="./js/jquery.min.js"/></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
-    
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/footer.css">
-    
-<title>My WebSite</title>
-</head>
-<body>
-    <!-- Fixed navbar -->
+<!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
@@ -45,23 +31,4 @@
       </ul>
     </div>
   </div>
-</nav>    <p>王三毛</p>
-    <p>王三毛</p>
-    <p>王三毛</p>
-    <p>王三毛</p>
-    <p>王三毛</p>
-    <p>王三毛</p>
-    <p>王三毛</p>
-    <p>王三毛</p>
-    <p>王三毛</p>
-    <p>王三毛</p>
-    <p>王三毛</p>
-    <p>王三毛</p>
-    <p>王三毛</p>
-    <p>王三毛</p>
-    <p>王三毛</p>
-<footer class="footer">
-	<p>&copy; 2015 Company, Inc.</p>
-</footer>    
-</body>
-</html>
+</nav>

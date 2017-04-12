@@ -11,16 +11,23 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
 public class FreemarkerUtil {
-
+	private String path = System.getProperty("user.dir");
 	public Template getTemplate(String name) {
 		Template temp = null;
 		try {
-			// Í¨¹ıFreemarkerµÄConfiguration¶ÁÈ¡ÏàÓ¦µÄFtl
+			//String path1 = Class.class.getClass().getResource("/").getPath();
+			System.out.println("project path:"+path);
+			//System.out.println("path1:"+path1);
+			// é€šè¿‡Freemarkerçš„Configurationè¯»å–ç›¸åº”çš„Ftl
 			Configuration cfg = new Configuration();
-			// Éè¶¨È¥ÄÄÀï¶ÁÈ¡ÏàÓ¦µÄftlÄ£°å
-			cfg.setClassForTemplateLoading(this.getClass(), "/ftl");
-			// ÔÚÄ£°åÎÄ¼şÄ¿Â¼ÖĞÑ°ÕÒÃû³ÆÎªnameµÄÄ£°åÎÄ¼ş
+			cfg.setDefaultEncoding("UTF-8");
+			// è®¾å®šå»å“ªé‡Œè¯»å–ç›¸åº”çš„ftlæ¨¡æ¿
+			File ftlDir = new File(path+"\\config\\ftl");
+			cfg.setDirectoryForTemplateLoading(ftlDir);
+			//cfg.setClassForTemplateLoading(this.getClass(), path+"\\src\\main\\webapp\\ftl");
+			// åœ¨æ¨¡æ¿æ–‡ä»¶ç›®å½•ä¸­å¯»æ‰¾åç§°ä¸ºnameçš„æ¨¡æ¿æ–‡ä»¶
 			temp = cfg.getTemplate(name);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -28,13 +35,13 @@ public class FreemarkerUtil {
 	}
 
 	/**
-	 * ¿ØÖÆÌ¨Êä³öÎÄ¼şÄÚÈİ
+	 * æ§åˆ¶å°è¾“å‡ºæ–‡ä»¶å†…å®¹
 	 * @param name
 	 * @param rootMap
 	 */
 	public void print(String name, Map<String, Object> rootMap) {
 		try {
-			// Í¨¹ıTemplateÀà¿ÉÒÔ½«Ä£°åÎÄ¼şÊä³öµ½ÏàÓ¦µÄÎÄ¼ş
+			// é€šè¿‡Templateç±»å¯ä»¥å°†æ¨¡æ¿æ–‡ä»¶è¾“å‡ºåˆ°ç›¸åº”çš„æ–‡ä»¶
 			Template temp = this.getTemplate(name);
 			temp.process(rootMap, new PrintWriter(System.out));
 		} catch (TemplateException e) {
@@ -45,7 +52,7 @@ public class FreemarkerUtil {
 	}
 
 	/**
-	 * ½«Ìæ»»ºóµÄÄ£°åÄÚÈİÊä³öµ½ÎÄ¼ş
+	 * å°†æ›¿æ¢åçš„æ¨¡æ¿å†…å®¹è¾“å‡ºåˆ°æ–‡ä»¶
 	 * @param name
 	 * @param rootMap
 	 * @param outFile
@@ -53,7 +60,7 @@ public class FreemarkerUtil {
 	public void fprint(String name, Map<String, Object> rootMap, String outFile) {
 		FileWriter out = null;
 		try {
-			out = new FileWriter(new File("D:\\freemarker\\ftl\\html\\"
+			out = new FileWriter(new File(path+"\\src\\main\\webapp\\pages\\"
 					+ outFile));
 			Template template = this.getTemplate(name);
 			template.process(rootMap, out);
