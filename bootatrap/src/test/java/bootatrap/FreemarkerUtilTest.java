@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import utils.freemarker.FreemarkerUtil;
+import utils.freemarker.LongToDate;
 
 public class FreemarkerUtilTest {
 	private FreemarkerUtil freemarkerUtil;
@@ -34,6 +35,16 @@ public class FreemarkerUtilTest {
 		// 填充数据
 		rootMap.put("username", "王三毛");
 		rootMap.put("pics", new int[]{1,2,3,4,5});
+		// 打印到控制台
+		freemarkerUtil.print(ftlName, rootMap);
+		// 输出到文件
+		freemarkerUtil.fprint(ftlName, rootMap, ftlName.substring(0, ftlName.lastIndexOf("."))+".html");
+	}
+	@Test
+	public void testFreemarkerFtl() {
+		String ftlName = "test.ftl";
+		// 填充数据
+		rootMap.put("timer", new LongToDate());
 		// 打印到控制台
 		freemarkerUtil.print(ftlName, rootMap);
 		// 输出到文件
