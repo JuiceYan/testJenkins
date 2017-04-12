@@ -1,4 +1,4 @@
-package bootatrap;
+package utils.freemarker;
 import java.util.HashMap;
 import java.util.Map;
 
